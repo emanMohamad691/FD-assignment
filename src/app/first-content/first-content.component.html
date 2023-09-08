@@ -1,0 +1,170 @@
+<!-- section 1 -->
+<div class="container   ">
+    <div class="row  justify-content-between">
+        <div class="col-lg-5 col-md-6 col-sm-6 ">
+            <div class="container p-3">
+                <div class="row  border-content  ">
+
+                    <!-- image and its input -->
+                    <div class="col img-column ">
+                        <input type="file" accept="image/*" (change)="getImagePath($event)" #fileInput
+                            style="display: none;">
+                        <button class="img-btm" (click)="fileInput.click()"><mat-icon class="image-icon">
+                                add_a_photo
+                            </mat-icon></button>
+                        <img class="image p-3"
+                            [src]="base64 ? base64:'https://th.bing.com/th/id/OIP.1agWrVsY6hvojkLbQBTdXwAAAA?w=176&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7'">
+                        <div class="row p-3  ">
+                            <div class="col resourse-name p-3 ">
+                                <p>اسم الموارد</p>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col "> <input type="text" id="name" class="form-control name-input"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- section 2  -->
+
+                <div class="row mt-3  border-content ">
+                    <div class="col-lg-3 col-md-12 col-sm-12  p-3">اختر نوع الموارد</div>
+
+                    <div class="col-lg-4 col-md-12 col-sm-12 p-3">
+                        <div class="form-check form-check-inline">
+
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option1">
+                            <label class="form-check-label" for="inlineRadio1">حجز خلال اليوم</label>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-md-12 col-sm-12 p-3">
+                        <div class="form-check form-check-inline">
+
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                value="option2">
+                            <label class="form-check-label" for="inlineRadio2">حجز مدة (اكثر من يوم)</label>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- section3 -->
+        <div class="col-lg-6 col-md-6 col-sm-6  ">
+            <div class="container p-3 mt-3  border-content ">
+                <div class="row">
+
+                    <!-- Supplier available to -->
+                    <div class="col " (click)="translate.use('en')">
+                        <p class="resourse-available">{{"المورد متاح الى" | translate}}</p>
+                    </div>
+                </div>
+
+                <!-- supplier input time -->
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group">
+                            <input type="number" class="form-control input-number  " id="validationCustomUsername"
+                                aria-describedby="inputGroupPrepend">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">شهر
+                                    <mat-icon class="expand_more"> expand_more</mat-icon>
+
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- supplier time and its input -->
+                <div class="row">
+                    <div class="col">
+                        <p class="resourse-available mt-2">وقت المورد</p>
+                    </div>
+                </div>
+
+                <!-- supplier inputs -->
+                <div class="row ">
+
+                    <div class="col-lg-3 col-sm-12 col-md-12 customize-items ">
+                        <div class="time-of-serves">
+
+                            <input class="form-check-input check-box " type="radio" name="number1" id="inlineRadio1"
+                                (click)="servesTime()">
+                            <mat-icon class="form-check-label schedule "> schedule</mat-icon>
+                            <label class="form-check-label label-of-serves  " for="inlineRadio1">وقت الخدمة</label>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-md-12 col-sm-12 customize-margin customize-items  ">
+                        <div class="time-of-serves">
+
+                            <input class="form-check-input check-box " type="radio" name="number1" id="inlineRadio2"
+                                (click)="displayTimeFun()">
+                            <mat-icon class="form-check-label schedule "> schedule</mat-icon>
+                            <label class="form-check-label label-of-serves " for="inlineRadio1">الوقت ثابت</label>
+
+                        </div>
+                    </div>
+
+                    <div *ngIf="displayTime" class=" col-lg-3 col-md-12 col-sm-12 customize-margin ">
+                        <div class="input-group ">
+                            <input class="botton-count" type="number" placeholder="دقيقة" id="inputGroupFile02">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- booking and its input -->
+                <div class="row">
+
+                    <div class="col multiple-booking">
+                        <p class="resourse-available mt-2">الحجز المتعدد</p>
+                        <mat-icon class="error">error</mat-icon>
+
+                    </div>
+                </div>
+
+                <!-- booking inputs -->
+                <div class="row ">
+                    <div class="col-lg-3 col-sm-12 col-md-12 customize-items ">
+                        <div class="time-of-serves">
+
+                            <input class="form-check-input check-box " type="radio" name="number2" id="inlineRadio3"
+                                (click)="bookOneOnly()">
+                            <mat-icon class="person">person</mat-icon>
+                            <label class="form-check-label label-of-serves " for="inlineRadio3">حجز واحد فقط</label>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12 col-sm-12 customize-margin customize-items">
+                        <div class="time-of-serves">
+
+                            <input class="form-check-input check-box " type="radio" name="number2" id="inlineRadio4"
+                                (click)="displayAppointmentFun()">
+                            <mat-icon class="form-check-label group "> group</mat-icon>
+                            <label class="form-check-label label-of-serves " for="inlineRadio3">حجز اكثر من شخص لنفس
+                                الموعد</label>
+
+                        </div>
+                    </div>
+
+                    <div *ngIf="displayAppointment" class="col-lg-3 col-md-12 col-sm-12 customize-margin">
+                        <div class="input-group ">
+                            <input class="botton-count" type="number" placeholder="موعد" id="inputGroupFile03">
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>

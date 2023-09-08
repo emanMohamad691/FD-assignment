@@ -1,0 +1,173 @@
+/* section 1 */
+.father {
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.content {
+    color: #92A1AD;
+}
+
+.parent-button {
+    border: 1px solid #F5F5F5;
+    width: 43%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    outline: none;
+    background-color: #FBFBFB;
+}
+
+.advanced-settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #92A1AD;
+    font-size: 1rem;
+}
+
+/* section 2 */
+
+.form-check-input {
+    width: 3.5rem;
+    height: 1.7rem;
+    margin: 0;
+}
+
+.time-picker-container {
+    direction: rtl;
+}
+
+input[type="time"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    color: rgb(164, 161, 161);
+    position: relative;
+}
+
+/* Style the selected time display */
+.selected-time {
+    font-size: 1rem;
+    margin-top: -28px;
+    color: #92A1AD;
+}
+
+.add,
+.remove {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    border: none;
+    color: #92A1AD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F1F3F4;
+
+}
+
+.copy {
+    border-radius: 10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: #92A1AD;
+    background-color: #F1F3F4;
+
+
+}
+
+.space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 100;
+
+}
+
+
+/* to make it responsive */
+
+@media screen and (max-width:600px) {
+
+    .parent-button {
+
+        width: 69%;
+        padding: 0.5rem;
+    }
+
+    .customize-margin {
+        margin-top: 2.5rem;
+    }
+
+    .time-picker-container {
+        margin-top: 2.5rem;
+    }
+
+    .customize-add-and-copy-button {
+        margin-top: 1.5rem;
+    }
+
+    .custome-remove-botton {
+        margin-top: 1.5rem;
+
+    }
+
+}
+
+@media screen and (min-width:601px) and (max-width:1000px) {
+    .parent-button {
+
+        width: 88%;
+        padding: 0;
+
+    }
+
+    .customize-margin {
+        margin-top: 2.5rem;
+    }
+
+    .time-picker-container {
+        margin-top: 0;
+    }
+
+    .customize-add-and-copy-button {
+        margin-top: 1.5rem;
+    }
+
+    .custome-remove-botton {
+        margin-top: 1.5rem;
+
+    }
+}

@@ -1,0 +1,449 @@
+<!-- section 1 -->
+<div class="container father mt-5">
+    <div class="row  justify-content-between">
+        <div class="col-md-6 col-sm-12 p-4 ">
+            <p class="header" (click)="translate.use('en')">{{'حدد مواعيد العمل للموارد' |translate}}</p>
+            <p class="content">تكوين اعدادات الاسبوع الخاص بك هنا.ما عليك سوى تحريك اشرطة التمرير واضافة / ازالة اوقات
+                الراحة لاعداد ساعات العمل</p>
+        </div>
+        <div class="col-md-6 col-sm-12 p-4  d-flex justify-content-end ">
+            <div class="parent-button ">
+                <div class="advanced-settings">اعدادات متقدمة</div>
+                <button type="button" class="btn btn-primary px-4 py-2 ">اعدادات تقليدية</button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------------------section 2------------------------------------------------ -->
+
+    <!-- السبت -->
+    <div class="row my-4 p-4 ">
+
+        <!-- start toggle button and name of the day -->
+        <div class="col-lg-2 col-md-12 col-sm-12  d-flex  p-2">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                    (click)="displaySaturday()" #toggleLocalReferance>
+            </div>
+            <div class="d-flex justify-content-center align-items-center  ">السبت</div>
+        </div>
+
+
+        <!-- time pickers and add,copy button  -->
+        <ng-container *ngIf="displaySaturdayVariable">
+            <div class="col-lg-3 col-md-6 col-sm-12  customize-margin  ">
+                <p class="selected-time">وقت البدء</p>
+                <input class="custom-input" type="time" id="number1">
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12  customize-margin  ">
+                <p class="selected-time">وقت الانتهاء</p>
+                <input type="time" id='number2'>
+            </div>
+
+            <div
+                class="col-lg-1 col-md-6 col-sm-12 d-flex justify-content-center align-items-center customize-add-and-copy-button ">
+                <button class="add" (click)="addtime()">+</button>
+            </div>
+            <div
+                class="col-lg-1 col-md-6 col-sm-12 d-flex justify-content-center align-items-center customize-add-and-copy-button ">
+                <button class="copy"><mat-icon>content_copy</mat-icon></button></div>
+        </ng-container>
+    </div>
+
+
+    <!-- start of array of saterday -->
+    <ng-container *ngIf="displaySaturdayVariable">
+        <div class="row mt-5 p-4" *ngFor="let item of test; let i = index">
+
+            <div class="col-lg-2 col-md-12 col-sm-12 "></div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 time-picker-container  ">
+                <p class="selected-time">وقت البدء</p>
+                <input class="custom-input" type="time" id="number3">
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 time-picker-container ">
+                <p class="selected-time">وقت الانتهاء</p>
+                <input type="time" id="number4">
+            </div>
+
+            <div
+                class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center custome-remove-botton ">
+                <button class="remove " (click)="remove(item.id)">-</button>
+            </div>
+        </div>
+    </ng-container>
+
+
+
+
+    <!-- الاحد -->
+
+    <div class="row my-5 p-4 ">
+        <div class="col-lg-2 col-md-12 col-sm-12  d-flex  p-2">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                    (click)="diaplaySunday()" #toggleSunday>
+            </div>
+            <div class="d-flex justify-content-center align-items-center  ">الاحد</div>
+
+        </div>
+
+        <!-- time pickers and add,copy button  -->
+        <ng-container *ngIf="displaySundayVariable">
+            <div class="col-lg-3 col-md-6 col-sm-12 customize-margin   ">
+                <p class="selected-time">وقت البدء</p>
+                <input class="custom-input" type="time" id="number5">
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 customize-margin ">
+                <p class="selected-time">وقت الانتهاء</p>
+                <input type="time" id="number6">
+            </div>
+            <div
+                class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center customize-add-and-copy-button ">
+                <button class="add" (click)="addSundayTime()">+</button>
+            </div>
+            <div
+                class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center customize-add-and-copy-button ">
+                <button class="copy"><mat-icon>content_copy</mat-icon></button></div>
+        </ng-container>
+
+
+        <!-- start of sunday times -->
+        <ng-container *ngIf="displaySundayVariable">
+
+            <div class="row mt-5 p-4" *ngFor="let item of sundayArray; let i = index">
+                <div class="col-lg-2 col-md-12 col-sm-12 "></div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 time-picker-container  ">
+                    <p class="selected-time">وقت البدء</p>
+                    <input class="custom-input" type="time" id="number7">
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 time-picker-container ">
+                    <p class="selected-time">وقت الانتهاء</p>
+                    <input type="time" id="number8">
+                </div>
+
+                <div
+                    class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center custome-remove-botton ">
+                    <button class="remove" (click)="removeSundayTime(item.id)">-</button>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+
+
+    <!-- الاثنين -->
+    <div class="row my-5 p-4 ">
+
+        <div class="col-lg-2 col-md-12 col-sm-12  d-flex  p-2">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                    (click)="displayMonday()" #toggleMonday>
+            </div>
+            <div class="d-flex justify-content-center align-items-center  ">الاثنين</div>
+
+        </div>
+
+
+        <!-- time pickers and add,copy button  -->
+        <ng-container *ngIf="displayMondayVariable">
+
+            <div class="col-lg-3 col-md-6 col-sm-12 customize-margin  ">
+                <p class="selected-time">وقت البدء</p>
+                <input class="custom-input" type="time" id="number9">
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 customize-margin ">
+                <p class="selected-time">وقت الانتهاء</p>
+                <input type="time" id="number10">
+            </div>
+
+            <div
+                class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center customize-add-and-copy-button ">
+                <button class="add" (click)="addMondayTime()">+</button>
+            </div>
+
+            <div
+                class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center customize-add-and-copy-button ">
+                <button class="copy"><mat-icon>content_copy</mat-icon></button></div>
+        </ng-container>
+
+
+        <!-- start monday time -->
+        <ng-container *ngIf="displayMondayVariable">
+            <div class="row mt-5 p-4" *ngFor="let item of mondayArray; let i = index">
+
+                <div class="col-lg-2 col-md-12 col-sm-12 "></div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 time-picker-container  ">
+                    <p class="selected-time">وقت البدء</p>
+                    <input class="custom-input" type="time" id="number11">
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 time-picker-container ">
+                    <p class="selected-time">وقت الانتهاء</p>
+                    <input type="time" id="number12">
+                </div>
+
+                <div
+                    class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center custome-remove-botton ">
+                    <button class="remove" (click)="removeMondayTime(item.id)">-</button>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+
+
+    <!-- الثلاثاء -->
+    <div class="row my-5 p-4 ">
+
+        <div class="col-lg-2 col-md-12 col-sm-12  d-flex  p-2">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                    (click)="displayTuesday()" #toggleTuesday>
+            </div>
+            <div class="d-flex justify-content-center align-items-center  ">الثلاثاء</div>
+
+        </div>
+
+
+        <!-- time pickers and add,copy button  -->
+        <ng-container *ngIf="displaytuesdayVariable">
+
+            <div class="col-lg-3 col-md-6 col-sm-12 customize-margin  ">
+                <p class="selected-time">وقت البدء</p>
+                <input class="custom-input" type="time" id="number13">
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 customize-margin ">
+                <p class="selected-time">وقت الانتهاء</p>
+                <input type="time" id="number14">
+            </div>
+
+            <div
+                class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center customize-add-and-copy-button ">
+                <button class="add" (click)="addTuesdayTime()">+</button>
+            </div>
+
+            <div
+                class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center customize-add-and-copy-button ">
+                <button class="copy"><mat-icon>content_copy</mat-icon></button></div>
+        </ng-container>
+
+
+        <!--  start tuesday time -->
+        <ng-container *ngIf="displaytuesdayVariable">
+            <div class="row mt-5 p-4" *ngFor="let item of tuesdayArray; let i = index">
+                <div class="col-lg-2 col-md-12 col-sm-12 "></div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 time-picker-container  ">
+                    <p class="selected-time">وقت البدء</p>
+                    <input class="custom-input" type="time" id="number15">
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 time-picker-container ">
+                    <p class="selected-time">وقت الانتهاء</p>
+                    <input type="time" id="number16">
+                </div>
+
+                <div
+                    class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center custome-remove-botton ">
+                    <button class="remove" (click)="removetuesdayTime(item.id)">-</button>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+
+
+    <!-- الاربعاء -->
+    <div class="row my-5 p-4 ">
+
+        <div class="col-lg-2 col-md-12 col-sm-12  d-flex  p-2">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                    (click)="displayWednesday()" #toggleWednesday>
+            </div>
+            <div class="d-flex justify-content-center align-items-center  ">الاربعاء</div>
+        </div>
+
+
+        <!-- time pickers and add,copy button  -->
+        <ng-container *ngIf="displayWednesdayVariable">
+
+            <div class="col-lg-3 col-md-6 col-sm-12 customize-margin  ">
+                <p class="selected-time">وقت البدء</p>
+                <input class="custom-input" type="time" id="number17">
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 customize-margin ">
+                <p class="selected-time">وقت الانتهاء</p>
+                <input type="time" id="number18">
+            </div>
+
+            <div
+                class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center customize-add-and-copy-button ">
+                <button class="add" (click)="addWednesdayTime()">+</button>
+            </div>
+
+            <div
+                class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center customize-add-and-copy-button ">
+                <button class="copy"><mat-icon>content_copy</mat-icon></button></div>
+        </ng-container>
+
+
+        <!-- start wednesday time -->
+        <ng-container *ngIf="displayWednesdayVariable">
+            <div class="row mt-5 p-4" *ngFor="let item of wednesdayArray; let i = index">
+
+                <div class="col-lg-2 col-md-12 col-sm-12 "></div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 time-picker-container  ">
+                    <p class="selected-time">وقت البدء</p>
+                    <input class="custom-input" type="time" id="number19">
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 time-picker-container ">
+                    <p class="selected-time">وقت الانتهاء</p>
+                    <input type="time" id="number20">
+                </div>
+
+                <div
+                    class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center custome-remove-botton ">
+                    <button class="remove" (click)="removeWednesdayTime(item.id)">-</button>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+
+
+    <!-- الخميس -->
+    <div class="row my-5 p-4 ">
+
+        <div class="col-lg-2 col-md-12 col-sm-12  d-flex  p-2">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                    (click)="displayThurday()" #toggleThurday>
+            </div>
+            <div class="d-flex justify-content-center align-items-center  ">الخميس</div>
+        </div>
+
+
+        <!-- time pickers and add,copy button  -->
+        <ng-container *ngIf="displayThursdayVariable">
+            <div class="col-lg-3 col-md-6 col-sm-12 customize-margin  ">
+                <p class="selected-time">وقت البدء</p>
+                <input class="custom-input" type="time" id="number21">
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 customize-margin ">
+                <p class="selected-time">وقت الانتهاء</p>
+                <input type="time" id="number22">
+            </div>
+
+            <div
+                class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center customize-add-and-copy-button ">
+                <button class="add" (click)="addThurdayTime()">+</button>
+            </div>
+
+            <div
+                class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center customize-add-and-copy-button">
+                <button class="copy"><mat-icon>content_copy</mat-icon></button></div>
+        </ng-container>
+
+
+        <!-- start thurday time -->
+        <ng-container *ngIf="displayThursdayVariable">
+
+            <div class="row mt-5 p-4" *ngFor="let item of thurdayArray; let i = index">
+                <div class="col-lg-2 col-md-12 col-sm-12 "></div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 time-picker-container  ">
+                    <p class="selected-time">وقت البدء</p>
+                    <input class="custom-input" type="time" id="number23">
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 time-picker-container ">
+                    <p class="selected-time">وقت الانتهاء</p>
+                    <input type="time" id="number24">
+                </div>
+
+                <div
+                    class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center custome-remove-botton">
+                    <button class="remove" (click)="removeThurdayTime(item.id)">-</button>
+                </div>
+            </div>
+        </ng-container>
+
+
+    </div>
+
+
+    <!-- الجمعة -->
+    <div class="row my-5 p-4 ">
+
+        <div class="col-lg-2 col-md-12 col-sm-12  d-flex  p-2">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                    (click)="displayFriday()" #toggleFriday>
+            </div>
+            <div class="d-flex justify-content-center align-items-center  ">الجمعة</div>
+
+        </div>
+
+
+        <!-- time pickers and add,copy button  -->
+        <ng-container *ngIf="displayFridayVariable">
+
+            <div class="col-lg-3 col-md-6 col-sm-12 customize-margin  ">
+                <p class="selected-time">وقت البدء</p>
+                <input class="custom-input" type="time" id="number25">
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 customize-margin ">
+                <p class="selected-time">وقت الانتهاء</p>
+                <input type="time" id="number26">
+            </div>
+
+            <div
+                class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center customize-add-and-copy-button ">
+                <button class="add" (click)="addFridayTime()">+</button>
+            </div>
+
+            <div
+                class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center customize-add-and-copy-button ">
+                <button class="copy"><mat-icon>content_copy</mat-icon></button></div>
+        </ng-container>
+
+
+        <!-- start friday time -->
+        <ng-container *ngIf="displayFridayVariable">
+
+            <div class="row mt-5 p-4" *ngFor="let item of fridayArray; let i = index">
+                <div class="col-lg-2 col-md-12 col-sm-12 "></div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 time-picker-container  ">
+                    <p class="selected-time">وقت البدء</p>
+                    <input class="custom-input" type="time" id="number27">
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 time-picker-container ">
+                    <p class="selected-time">وقت الانتهاء</p>
+                    <input type="time" id="number28">
+                </div>
+
+                <div
+                    class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center align-items-center custome-remove-botton ">
+                    <button class="remove" (click)="removeFridayTime(item.id)">-</button>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

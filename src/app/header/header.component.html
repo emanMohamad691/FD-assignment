@@ -1,0 +1,41 @@
+<div class="container    ">
+    <div class="row parent-row  justify-content-between">
+
+        <!-- arrow and Add new resources -->
+        <div class="col-lg-4 col-md-4  ">
+            <div class="row p-3">
+                <mat-icon class=" col-1 arrow"> arrow_forward</mat-icon>
+                <div class="col add-new-resourse " (click)="translate.use('en')"> {{'اضافة موارد جديدة' | translate}}
+                </div>
+            </div>
+        </div>
+
+        <!-- ---------------------------------------------------------- -->
+        <div class="col-lg-5 col-md-8   ">
+            <div class="row mt-1  justify-content-between  ">
+
+                <!-- toggle button -->
+                <div class="col-md-4 col-sm-12  p-3 form-check form-switch toggle">
+                    <input class="form-check-input toggle-input " type="checkbox" role="switch"
+                        id="flexSwitchCheckDefault" checked="true">
+                    <label class="form-check-label " for="flexSwitchCheckDefault">مفعلة</label>
+                </div>
+
+                <!-- save changes -->
+                <div class="col-md-4 col-sm-12  p-3 ">
+                    <button type="button" class="btn btn-dark save-changes save-change-width  ">حفظ التغيرات</button>
+                </div>
+
+                <!-- delete resources -->
+                <div class="col-md-4 col-sm-12  p-3 ">
+                    <button type="button" class="btn btn-delete-resourse delete-width ">
+                        <mat-icon class="delete ">delete</mat-icon>
+                        <div class="delete-resourse">حذف الموارد</div>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>

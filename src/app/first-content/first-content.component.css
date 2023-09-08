@@ -1,0 +1,182 @@
+/* section 1 and 2 */
+.border-content {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color: white;
+    color: #92A1AD;
+}
+
+.image {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    /* padding: 1rem; */
+    width: 120px;
+    height: 120px;
+}
+
+.img-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.img-btm {
+    position: absolute;
+    top: 22px;
+    right: 94px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: #0d6efd;
+    padding: 0.2rem;
+    border-color: transparent;
+}
+
+.name-input {
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+    background-color: #F4EEEE;
+    border-color: #B2A6A6;
+}
+
+.resourse-name {
+    margin-right: 0.5rem;
+    color: #92A1AD;
+}
+
+.image-icon {
+    color: white;
+    fill: none;
+    font-size: 1.5rem;
+}
+
+.labels {
+    margin-right: 0.5rem;
+}
+
+.form-check .form-check-input {
+    float: none;
+    margin-left: 0.5rem;
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+/* section 3 */
+.resourse-available {
+    color: #92A1AD;
+}
+
+.input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    outline: none;
+    background-color: #F6F2F2;
+    border-color: #D9D9D9;
+
+}
+
+.input-group-text {
+    background-color: #ECF1F6;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-color: #E7E7E8;
+    border-right: none;
+
+}
+
+.customize-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.expand_more {
+    color: black;
+}
+
+.deployed_code_history {
+    color: black;
+}
+
+.time-of-serves {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.schedule,
+.person,
+.group {
+    margin-right: 0.5rem;
+    color: #D6DDE5;
+}
+
+.label-of-serves {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+
+}
+
+.botton-count {
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background-color: #F6F2F2;
+    border: 1px solid #D9D9D9;
+}
+
+.multiple-booking {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.error {
+    color: #D6DDE5;
+    margin-right: 0.5rem;
+}
+
+
+/* to make it responsive */
+
+@media screen and (max-width:600px) {
+    .customize-margin {
+        margin-top: 1rem;
+    }
+
+    .customize-items {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width:601px) and (max-width:1000px) {
+    .customize-margin {
+        margin-top: 1rem;
+    }
+
+    .customize-items {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+}
